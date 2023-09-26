@@ -1,0 +1,160 @@
+.login-page-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .login-page-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.login-image-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .login-image-container {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.login-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .login-image {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+.form-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .form-card-container {
+    width: 50%;
+    padding: 80px;
+  }
+}
+
+.form-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .form-card {
+    justify-content: center;
+    width: 70%;
+  }
+}
+
+.website-logo {
+  height: 35px;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .website-logo {
+    height: 46px;
+    margin-bottom: 50px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+}
+@media screen and (min-width: 768px) {
+  .form {
+    width: 100%;
+  }
+}
+
+.label-and-input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.label {
+  color: #5a7184;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+@media screen and (min-width: 768px) {
+  .label {
+    font-size: 16px;
+  }
+}
+
+.login-input {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #c3cad9;
+  background: #fff;
+  color: #183b56;
+  font-size: 16px;
+  padding-left: 20px;
+  outline: none;
+}
+.login-button {
+  width: 100%;
+  height: 38px;
+  background: #0284c7;
+  color: #fff;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+.error-message {
+  color: #ef4444;
+  text-align: start;
+  width: 100%;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
