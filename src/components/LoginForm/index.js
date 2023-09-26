@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './index.css'
 
@@ -10,7 +11,7 @@ class LoginForm extends Component {
   }
 
   onChangePassword = event => {
-    this.setState({username: event.target.value})
+    this.setState({password: event.target.value})
   }
 
   onLoginSuccess = jwtToken => {
@@ -43,6 +44,10 @@ class LoginForm extends Component {
 
   render() {
     const {username, password, showErrorMsg, errorMsg} = this.state
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
     return (
       <div className="login-page-container">
         <div className="login-image-container">
