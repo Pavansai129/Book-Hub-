@@ -1,0 +1,136 @@
+.navbar-container {
+  height: 9vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+}
+@media screen and (min-width: 768px) {
+  .header-container {
+    height: 10vh;
+    padding: 20px 40px 20px 40px;
+  }
+}
+.book-hub-logo {
+  height: 25px;
+}
+@media screen and (min-width: 768px) {
+  .book-hub-logo {
+    height: 43px;
+  }
+}
+.mobile-menu-container {
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu-container {
+    display: none;
+  }
+}
+
+.trigger-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+}
+.popup-menu-container {
+  height: 100vh;
+  width: 100vw;
+  background: #ffffff;
+}
+.close-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+.mobile-nav-link-text {
+  list-style-type: none;
+  margin-bottom: 50px;
+}
+.popup-logout-text {
+  color: #64748b;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  list-style-type: none;
+}
+.link-item {
+  color: #64748b;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+
+  text-decoration: none;
+}
+.selected-item {
+  color: #0284c7;
+}
+.mobile-popup-icon-container {
+  display: flex;
+  background: none;
+}
+@media screen and (min-width: 768px) {
+  .mobile-popup-icon-container {
+    display: none;
+  }
+}
+.mobile-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu-container {
+    display: none;
+  }
+}
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.desktop-menu-container {
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .desktop-menu-container {
+    display: none;
+  }
+}
+
+.desktop-menu-list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.desktop-logout-button {
+  background: #0284c7;
+  color: #f8fafc;
+  height: 40px;
+  width: 130px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+.desktop-book-shelves-text {
+  color: #64748b;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration: none;
+  margin-right: 30px;
+  margin-left: 30px;
+}
