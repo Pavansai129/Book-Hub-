@@ -27,20 +27,18 @@ class Header extends Component {
           <li className="nav-link-text">
             <Link
               to="/"
-              className={`${
-                path === '/' ? 'link-item selected-item' : 'link-item'
-              }`}
+              className={path === '/' ? 'selected-item' : 'link-item'}
             >
               Home
             </Link>
           </li>
           <li className="nav-link-text">
             <Link
-              to="/books"
+              to="/shelf"
               className={
-                path === '/books'
-                  ? 'link-item desktop-book-shelves-text selectedItem'
-                  : 'link-item desktop-book-shelves-text'
+                path === '/shelf'
+                  ? 'selected-item text-margin'
+                  : 'desktop-book-shelves-text'
               }
             >
               Bookshelves
@@ -80,23 +78,14 @@ class Header extends Component {
     return (
       <ul className="mobile-menu-list">
         <li className="nav-link-text">
-          <Link
-            to="/"
-            className={`${
-              path === '/' ? 'link-item selected-item' : 'link-item'
-            }`}
-          >
+          <Link to="/" className={path === '/' ? 'selected-item' : 'link-item'}>
             Home
           </Link>
         </li>
         <li className="nav-link-text">
           <Link
-            to="/books"
-            className={
-              path === '/books'
-                ? 'desktop-book-shelves-text selectedItem'
-                : 'desktop-book-shelves-text'
-            }
+            to="/shelf"
+            className={path === '/shelf' ? 'selected-item' : 'link-item'}
           >
             Bookshelves
           </Link>

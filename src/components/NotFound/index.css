@@ -21,6 +21,11 @@
   color: #475569;
   font-weight: 500;
 }
+@media screen and (min-width: 768px) {
+  .heading {
+    font-size: 40px;
+  }
+}
 .description {
   font-size: 16px;
   line-height: 1.5;
@@ -46,5 +51,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
+  margin-top: 20px;
   background: #0284c7;
 }

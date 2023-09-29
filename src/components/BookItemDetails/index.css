@@ -1,0 +1,135 @@
+.book-item-details-page-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: #f5f7fa;
+}
+
+.book-item-details-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 80px;
+}
+.book-item-details-card {
+  border-radius: 10px;
+  background: #f5f7fa;
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .book-item-details-card {
+    padding: 30px;
+    border-radius: 15px;
+    background: #ffffff;
+  }
+}
+.book-item-top-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .book-item-top-section {
+    flex-direction: row;
+  }
+}
+.book-cover-pic {
+  border-radius: 10px;
+  width: 200px;
+}
+.book-item-top-section-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .book-item-top-section-details-container {
+    height: 200px;
+    padding-left: 20px;
+  }
+}
+.book-title {
+  width: 100%;
+  color: #334155;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .book-title {
+    text-align: start;
+  }
+}
+.book-author-name {
+  width: 100%;
+  color: #475569;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .book-author-name {
+    text-align: start;
+  }
+}
+.book-rating {
+  width: 100%;
+  color: #475569;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .book-rating {
+    text-align: start;
+  }
+}
+.book-read-status {
+  width: 100%;
+  color: #475569;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .book-read-status {
+    text-align: start;
+  }
+}
+.status {
+  width: 100%;
+  color: #0284c7;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .status {
+    text-align: start;
+  }
+}
+.horizontal-line {
+  width: 100%;
+  border: 1px solid #94a3b8;
+  margin-bottom: 20px;
+}
+.book-item-bottom-section-heading {
+  color: #334155;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.book-item-bottom-section-description {
+  color: #475569;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}

@@ -6,9 +6,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  background-color: #f5f7fa;
+  padding-bottom: 30px;
+  background: #f5f7fa;
 }
 
 .home-page-content-container {
@@ -175,50 +176,43 @@
     font-weight: 300;
   }
 }
-.cover-pic {
-  height: 80px;
-  width: 100px;
-  margin-bottom: 10px;
-}
-@media screen and (min-width: 425px) {
-  .cover-pic {
-    width: 90%;
-    height: 180px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .cover-pic {
-    width: 90%;
-    height: 180px;
-  }
+.book-cover-pic {
+  height: 200px;
+  width: 80%;
+
+  margin-bottom: 20px;
 }
 .book-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  object-fit: scale-down;
+  width: 100%;
 }
-.title {
+.book-title {
   color: #334155;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-align: center;
-}
-@media screen and (min-width: 768px) {
-  .title {
-    font-size: 18px;
-  }
-}
-.author-name {
-  color: #475569;
   font-size: 10px;
   font-weight: 600;
   margin-bottom: 10px;
   text-align: center;
+  width: 80%;
 }
 @media screen and (min-width: 768px) {
-  .author-name {
-    font-size: 14px;
+  .book-title {
+    font-size: 16px;
+  }
+}
+.book-author-name {
+  width: 80%;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .book-author-name {
+    font-size: 12px;
   }
 }

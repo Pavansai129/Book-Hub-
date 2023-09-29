@@ -35,8 +35,8 @@ class Home extends Component {
       },
     }
     const response = await fetch(topRatedBooksApiUrl, options)
+    const data = await response.json()
     if (response.ok === true) {
-      const data = await response.json()
       const formatedData = data.books.map(eachBook => ({
         id: eachBook.id,
         title: eachBook.title,
@@ -57,18 +57,15 @@ class Home extends Component {
     const settings = {
       dots: false,
       infinite: true,
-      swipe: true,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 4,
-      adaptiveHeight: true,
       responsive: [
         {
           breakpoint: 1024,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
-            initialSlide: 2,
           },
         },
         {
@@ -76,7 +73,6 @@ class Home extends Component {
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
-            initialSlide: 2,
           },
         },
         {
@@ -97,9 +93,13 @@ class Home extends Component {
               <li key={id}>
                 <Link to={`/books/${id}`}>
                   <div className="book-container">
-                    <img src={coverPic} alt={title} className="cover-pic" />
-                    <h1 className="title">{title}</h1>
-                    <h1 className="author-name">{authorName}</h1>
+                    <img
+                      src={coverPic}
+                      alt={title}
+                      className="book-cover-pic"
+                    />
+                    <h1 className="book-title">{title}</h1>
+                    <h1 className="book-author-name">{authorName}</h1>
                   </div>
                 </Link>
               </li>
