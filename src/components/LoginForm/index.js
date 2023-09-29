@@ -53,7 +53,7 @@ class LoginForm extends Component {
         <div className="login-image-container">
           <img
             src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695753965/Book%20Hub/Login%20Page%20Image.png"
-            alt="login cover"
+            alt="website login"
             className="login-image"
           />
         </div>
@@ -61,7 +61,7 @@ class LoginForm extends Component {
           <div className="form-card">
             <img
               src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695754147/Book%20Hub/Book%20Hub%20Logo.png"
-              alt="website logo"
+              alt="login website logo"
               className="website-logo"
             />
             <form onSubmit={this.onSubmitForm} className="form">

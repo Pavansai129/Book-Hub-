@@ -12,10 +12,11 @@ const NotFound = props => {
         alt="not found"
         className="not-found-image"
       />
-      <h1 className="description">
+      <h1 className="heading">Page Not Found</h1>
+      <p className="description">
         we are sorry, the page you requested could not be found. Please go back
         to the homepage.
-      </h1>
+      </p>
       <button
         type="button"
         className="button"

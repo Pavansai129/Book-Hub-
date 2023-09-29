@@ -1,75 +1,84 @@
-import Popup from 'reactjs-popup'
+import {Component} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import {AiOutlineClose} from 'react-icons/ai'
+import {AiFillCloseCircle} from 'react-icons/ai'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import './index.css'
 
-const Header = props => {
-  const {match} = props
-  const {path} = match
-  const onClickLogout = () => {
-    const {history} = props
+class Header extends Component {
+  state = {showMenu: false}
+
+  onClickLogoutButton = () => {
+    const {history} = this.props
     Cookies.remove('jwt_token')
     history.replace('/login')
   }
-  const renderMobileNavLinks = () => (
-    <div className="mobile-popup-icon-container">
-      <Popup
-        modal
-        trigger={
-          <button type="button" className="trigger-button">
-            <GiHamburgerMenu size="18px" />
-          </button>
-        }
-      >
-        {close => (
-          <div className="popup-menu-container">
-            <div className="close-button-container">
-              <button
-                type="button"
-                className="trigger-button"
-                onClick={() => close()}
-              >
-                <AiOutlineClose size="30px" />
-              </button>
-            </div>
-            <div className="mobile-menu-container">
-              <ul className="mobile-menu-list">
-                <li className="mobile-nav-link-text">
-                  <Link
-                    to="/"
-                    className={`${
-                      path === '/' ? 'link-item selected-item' : 'link-item'
-                    }`}
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li className="mobile-nav-link-text">
-                  <Link
-                    to="/books"
-                    className={
-                      path === '/books' ? 'link-item selectedItem' : 'link-item'
-                    }
-                  >
-                    Bookshelves
-                  </Link>
-                </li>
-                <li className="popup-logout-text" onClick={onClickLogout}>
-                  Logout
-                </li>
-              </ul>
-            </div>
-          </div>
-        )}
-      </Popup>
-    </div>
+
+  onClickMenuBar = () => {
+    this.setState({showMenu: true})
+  }
+
+  renderDesktopNavLinks = () => {
+    const {match} = this.props
+    const {path} = match
+    return (
+      <div className="desktop-menu-container">
+        <ul className="desktop-menu-list">
+          <li className="nav-link-text">
+            <Link
+              to="/"
+              className={`${
+                path === '/' ? 'link-item selected-item' : 'link-item'
+              }`}
+            >
+              Home
+            </Link>
+          </li>
+          <li className="nav-link-text">
+            <Link
+              to="/books"
+              className={
+                path === '/books'
+                  ? 'link-item desktop-book-shelves-text selectedItem'
+                  : 'link-item desktop-book-shelves-text'
+              }
+            >
+              Bookshelves
+            </Link>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="logout-button"
+              onClick={this.onClickLogoutButton}
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    )
+  }
+
+  renderMobileNavLinks = () => (
+    <button
+      type="button"
+      onClick={this.onClickMenuBar}
+      className="mobile-menu-icon"
+    >
+      <GiHamburgerMenu size="25px" />
+    </button>
   )
 
-  const renderDesktopNavLinks = () => (
-    <div className="desktop-menu-container">
-      <ul className="desktop-menu-list">
+  onClickCloseIcon = () => {
+    this.setState({showMenu: false})
+  }
+
+  renderMobileMenu = () => {
+    const {match} = this.props
+    const {path} = match
+    return (
+      <ul className="mobile-menu-list">
         <li className="nav-link-text">
           <Link
             to="/"
@@ -95,31 +104,48 @@ const Header = props => {
         <li>
           <button
             type="button"
-            className="desktop-logout-button"
-            onClick={onClickLogout}
+            className="logout-button"
+            onClick={this.onClickLogoutButton}
           >
             Logout
           </button>
         </li>
+        <li>
+          <button
+            type="button"
+            onClick={this.onClickCloseIcon}
+            className="mobile-menu-close-button"
+          >
+            <AiFillCloseCircle size="25px" />
+          </button>
+        </li>
       </ul>
-    </div>
-  )
+    )
+  }
 
-  return (
-    <nav className="navbar-container">
-      <Link to="/">
-        <img
-          src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695754147/Book%20Hub/Book%20Hub%20Logo.png"
-          alt="website logo"
-          className="book-hub-logo"
-        />
-      </Link>
-      <div>
-        {renderMobileNavLinks()}
-        {renderDesktopNavLinks()}
-      </div>
-    </nav>
-  )
+  render() {
+    const {showMenu} = this.state
+    return (
+      <nav className="navbar">
+        <nav className="navbar-items-container">
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695754147/Book%20Hub/Book%20Hub%20Logo.png"
+              alt="website logo"
+              className="book-hub-logo"
+            />
+          </Link>
+          <div>
+            {this.renderMobileNavLinks()}
+            {this.renderDesktopNavLinks()}
+          </div>
+        </nav>
+        {showMenu && (
+          <div className="mobile-menu-container">{this.renderMobileMenu()}</div>
+        )}
+      </nav>
+    )
+  }
 }
 
 export default withRouter(Header)
