@@ -78,9 +78,9 @@ class BookItemDetails extends Component {
             <img src={coverPic} alt={title} className="book-cover-pic" />
             <div className="book-item-top-section-details-container">
               <h1 className="book-title">{title}</h1>
-              <h1 className="book-author-name">{authorName}</h1>
+              <p className="book-author-name">{authorName}</p>
               <p className="book-rating">
-                Avg Rating: {<BsFillStarFill />} {rating}
+                Avg Rating: {<BsFillStarFill color="#FBBF24" />} {rating}
               </p>
               <p className="book-read-status">
                 Status: <span className="status">{readStatus}</span>
@@ -97,29 +97,30 @@ class BookItemDetails extends Component {
     )
   }
 
-  onClickTryAgain = () => {
-    this.getBookDetails()
+  renderFailureView = () => {
+    const onClickTryAgain = () => {
+      this.getBookDetails()
+    }
+    return (
+      <div className="failure-content-container">
+        <img
+          src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695984137/Book%20Hub/Failure%20View%20Image.png"
+          alt="failure view"
+          className="failure-image"
+        />
+        <p className="failure-content-text">
+          Something went wrong, Please try again
+        </p>
+        <button
+          type="button"
+          className="try-again-button"
+          onClick={onClickTryAgain}
+        >
+          Try Again
+        </button>
+      </div>
+    )
   }
-
-  renderFailureView = () => (
-    <div className="failure-content-container">
-      <img
-        src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695984137/Book%20Hub/Failure%20View%20Image.png"
-        alt="failure view"
-        className="failure-image"
-      />
-      <h1 className="failure-content-text">
-        Something went wrong, Please try again.
-      </h1>
-      <button
-        type="button"
-        className="try-again-button"
-        onClick={this.onClickTryAgain}
-      >
-        Try Again
-      </button>
-    </div>
-  )
 
   renderLoadingView = () => (
     <div className="loader-container" testid="loader">

@@ -86,7 +86,7 @@ class BookShelves extends Component {
   renderSuccessView = () => {
     const {books, searchText} = this.state
     return (
-      <div>
+      <>
         {books.length === 0 ? (
           <div className="no-books-view-container">
             <img
@@ -95,7 +95,7 @@ class BookShelves extends Component {
               className="no-books-view-image"
             />
             <p className="no-books-view-text">
-              Your search for {searchText} did not find any matches.
+              Your search for {searchText} did not find any matches
             </p>
           </div>
         ) : (
@@ -110,15 +110,16 @@ class BookShelves extends Component {
                 coverPic,
               } = eachBook
               return (
-                <li key={id} className="book-item">
-                  <Link to={`/books/${id}`}>
+                <li className="book-item">
+                  <Link to={`/books/${id}`} key={id}>
                     <div className="book-item-container">
                       <img src={coverPic} alt={title} className="cover-pic" />
                       <div className="book-item-data-container">
                         <h1 className="title">{title}</h1>
                         <h1 className="author-name">{authorName}</h1>
                         <p className="rating">
-                          Avg Rating {<BsFillStarFill />} {rating}
+                          Avg Rating {<BsFillStarFill color="#FBBF24" />}{' '}
+                          {rating}
                         </p>
                         <p className="read-status">
                           Status: <span className="status">{readStatus}</span>
@@ -131,33 +132,34 @@ class BookShelves extends Component {
             })}
           </ul>
         )}
-      </div>
+      </>
     )
   }
 
-  onClickTryAgain = () => {
-    this.getBooks()
+  renderFailureView = () => {
+    const onClickTryAgain = () => {
+      this.getBooks()
+    }
+    return (
+      <div className="failure-content-container">
+        <img
+          src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695984137/Book%20Hub/Failure%20View%20Image.png"
+          alt="failure view"
+          className="failure-image"
+        />
+        <h1 className="failure-content-text">
+          Something went wrong, Please try again
+        </h1>
+        <button
+          type="button"
+          className="try-again-button"
+          onClick={onClickTryAgain}
+        >
+          Try Again
+        </button>
+      </div>
+    )
   }
-
-  renderFailureView = () => (
-    <div className="failure-content-container">
-      <img
-        src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695984137/Book%20Hub/Failure%20View%20Image.png"
-        alt="failure view"
-        className="failure-image"
-      />
-      <h1 className="failure-content-text">
-        Something went wrong, Please try again.
-      </h1>
-      <button
-        type="button"
-        className="try-again-button"
-        onClick={this.onClickTryAgain}
-      >
-        Try Again
-      </button>
-    </div>
-  )
 
   renderLoadingView = () => (
     <div className="loader-container" testid="loader">
@@ -185,7 +187,10 @@ class BookShelves extends Component {
 
   onClickSearchIcon = () => {
     const {userInput} = this.state
-    this.setState({searchText: userInput.toLowerCase()}, this.getBooks)
+    this.setState(
+      {searchText: userInput.toLowerCase(), userInput: ''},
+      this.getBooks,
+    )
   }
 
   onKeyDown = event => {

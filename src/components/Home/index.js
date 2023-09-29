@@ -58,8 +58,8 @@ class Home extends Component {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       responsive: [
         {
           breakpoint: 1024,
@@ -99,7 +99,7 @@ class Home extends Component {
                       className="book-cover-pic"
                     />
                     <h1 className="book-title">{title}</h1>
-                    <h1 className="book-author-name">{authorName}</h1>
+                    <p className="book-author-name">{authorName}</p>
                   </div>
                 </Link>
               </li>
@@ -110,29 +110,30 @@ class Home extends Component {
     )
   }
 
-  onClickTryAgain = () => {
-    this.getTopRatedBooks()
+  renderFailureView = () => {
+    const onClickTryAgain = () => {
+      this.getTopRatedBooks()
+    }
+    return (
+      <div className="failure-content-container">
+        <img
+          src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695984137/Book%20Hub/Failure%20View%20Image.png"
+          alt="failure view"
+          className="failure-image"
+        />
+        <p className="failure-content-text">
+          Something went wrong, Please try again.
+        </p>
+        <button
+          type="button"
+          className="try-again-button"
+          onClick={onClickTryAgain}
+        >
+          Try Again
+        </button>
+      </div>
+    )
   }
-
-  renderFailureView = () => (
-    <div className="failure-content-container">
-      <img
-        src="https://res.cloudinary.com/dhcs4pksp/image/upload/v1695984137/Book%20Hub/Failure%20View%20Image.png"
-        alt="failure view"
-        className="failure-image"
-      />
-      <h1 className="failure-content-text">
-        Something went wrong, Please try again.
-      </h1>
-      <button
-        type="button"
-        className="try-again-button"
-        onClick={this.onClickTryAgain}
-      >
-        Try Again
-      </button>
-    </div>
-  )
 
   renderLoadingView = () => (
     <div className="loader-container" testid="loader">
@@ -154,11 +155,6 @@ class Home extends Component {
     }
   }
 
-  onCLickFindBooksButton = () => {
-    const {history} = this.props
-    history.replace('/shelf')
-  }
-
   render() {
     return (
       <div className="home-page-container">
@@ -171,24 +167,26 @@ class Home extends Component {
               enjoyed in the past, and we will give you surprisingly insightful
               recommendations.
             </p>
-            <button
-              type="button"
-              className="find-books-button mobile-view-button"
-              onClick={this.onCLickFindBooksButton}
-            >
-              Find Books
-            </button>
+            <Link to="/">
+              <button
+                type="button"
+                className="find-books-button mobile-view-button"
+              >
+                Find Books
+              </button>
+            </Link>
           </div>
           <div className="top-rated-books-container">
             <div className="top-rated-text-and-button-container">
               <h1 className="top-rated-text">Top Rated Books</h1>
-              <button
-                type="button"
-                onClick={this.onCLickFindBooksButton}
-                className="find-books-button desktop-view-button"
-              >
-                Find Books
-              </button>
+              <Link to="/shelf">
+                <button
+                  type="button"
+                  className="find-books-button desktop-view-button"
+                >
+                  Find Books
+                </button>
+              </Link>
             </div>
             <div>{this.renderTopRatedBooks()}</div>
           </div>
