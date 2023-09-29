@@ -1,181 +1,224 @@
-.main-container {
-  min-height: 100vh;
-  background-color: #f5f7fa;
+* {
+  font-family: 'Roboto';
 }
 
-.home-content-section {
+.home-page-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 92vh;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f7fa;
 }
 
-.content-container {
-  margin: 25px;
+.home-page-content-container {
+  width: 100%;
 }
-
-.homeRoute-main-heading,
-.carousel-heading {
-  font-size: 25px;
+@media screen and (min-width: 768px) {
+  .home-page-content-container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+.home-page-text-container {
+  width: 100%;
+  padding: 10px;
+}
+@media screen and (min-width: 768px) {
+  .home-page-text-container {
+    padding: 20px 0px;
+  }
+}
+.content-heading {
   color: #1e293b;
-  margin-bottom: 7px;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
-
-.para {
+@media screen and (min-width: 768px) {
+  .content-heading {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+}
+.content-description {
   color: #475569;
-  font-size: 17px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-
-.find-books-btn {
-  color: #ffffff;
-  min-height: 35px;
-  min-width: 100px;
-  padding: 5px 10px 5px 10px;
+@media screen and (min-width: 768px) {
+  .content-description {
+    font-size: 20px;
+    width: 70%;
+    margin-bottom: 15px;
+  }
+}
+.find-books-button {
+  color: #f8fafc;
+  background: #0284c7;
+  height: 30px;
+  width: 80px;
+  font-size: 10px;
+  font-weight: 500;
   border: none;
-  background-color: #0284c7;
-  border-radius: 8px;
+  border-radius: 3px;
+  outline: none;
   cursor: pointer;
-  font-size: 15px;
-  margin-top: 25px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .find-books-button {
+    font-size: 16px;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+}
+.mobile-view-button {
+}
+@media screen and (min-width: 768px) {
+  .mobile-view-button {
+    display: none;
+  }
+}
+.desktop-view-button {
+}
+@media screen and (max-width: 768px) {
+  .desktop-view-button {
+    display: none;
+  }
+}
+.top-rated-books-container {
+  border: none;
+  border-radius: 5px;
+  padding-bottom: 20px;
+  box-shadow: 0px 0px 10px rgba(40, 41, 61, 0.08);
 }
 
-.md-find-books-btn {
-  display: none;
-}
-
-.content-section {
+.top-rated-text-and-button-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
-.slider-container {
-  background-color: #419be0;
-  padding: 40px;
+.top-rated-text {
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 600;
 }
-.carousel-container {
-  background-color: #ffffff;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 0px 11px 0px black;
-  width: 90%;
-  align-self: center;
-  border-radius: 10px;
-  /* border: 1px solid red; */
+@media screen and (min-width: 768px) {
+  .top-rated-text {
+    font-size: 30px;
+  }
 }
-
 .slick-prev:before,
 .slick-next:before {
   color: black;
 }
-
-.top-rated-img {
-  height: 180px;
-  margin: auto;
-}
-
 .slider-container {
-  width: 90%;
-  align-self: center;
-  margin-top: 25px;
+  background-color: #ffffff;
+  padding: 40px;
 }
-
-.top-rated-book-container {
-  text-align: center;
-}
-
-.top-rating-heading {
-  font-size: 18px;
-  color: #334155;
-  font-weight: 700;
-  margin-top: 8px;
-}
-
-.top-rated-para {
-  color: #475569;
-  font-size: 16px;
-  font-weight: 600;
-}
-
 .loader-container {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 280px;
+  align-items: center;
 }
-
-.failure-view-container {
+.failure-content-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 280px;
+  align-items: center;
+}
+.failure-image {
+  width: 100px;
   margin-bottom: 20px;
-  margin-top: 20px;
 }
-
-.failure-view-img {
-  height: 120px;
-  margin-bottom: 15px;
+@media screen and (min-width: 768px) {
+  .failure-image {
+    width: 300px;
+  }
 }
-
-.failure-text {
-  font-size: 20px;
+.failure-content-text {
   color: #475569;
+  font-size: 10px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
-
-.failure-btn {
+@media screen and (min-width: 768px) {
+  .failure-content-text {
+    font-size: 20px;
+  }
+}
+.try-again-button {
   color: #ffffff;
-  min-height: 35px;
-  min-width: 100px;
-  padding: 5px 10px 5px 10px;
+  background: #0284c7;
   border: none;
-  background-color: #0284c7;
-  border-radius: 8px;
+  border-radius: 3px;
+  height: 30px;
+  width: 80px;
+  font-size: 12px;
+  font-weight: 300;
+  outline: none;
   cursor: pointer;
 }
-
-@media (min-width: 768px) {
-  .home-content-section {
-    align-items: center;
+@media screen and (min-width: 768px) {
+  .try-again-button {
+    height: 40px;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 300;
   }
-  .content-section {
-    width: 80%;
-    /* border: 1px solid red; */
+}
+.cover-pic {
+  height: 80px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 425px) {
+  .cover-pic {
+    width: 90%;
+    height: 180px;
   }
-  .md-find-books-btn {
-    display: block;
-    margin: 0px;
+}
+@media screen and (min-width: 768px) {
+  .cover-pic {
+    width: 90%;
+    height: 180px;
   }
-  .sm-find-books-btn {
-    display: none;
+}
+.book-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 18px;
   }
-  .carousel-content-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* border: 1px solid red; */
-  }
-  .top-rating-heading {
-    margin: 10px 0px 5px 0px;
-  }
-  .content-container {
-    width: 70%;
-    margin: 35px 0px 0px 0px;
-  }
-
-  .homeRoute-main-heading {
-    margin-bottom: 10px;
-    font-size: 40px;
-  }
-  .carousel-container {
-    width: 100%;
-    margin-top: 25px;
-  }
-  .failure-view-img {
-    height: 200px;
+}
+.author-name {
+  color: #475569;
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .author-name {
+    font-size: 14px;
   }
 }

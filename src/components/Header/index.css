@@ -4,21 +4,19 @@
 }
 
 .navbar {
-  height: 9vh;
   background: #ffffff;
-  padding: 10px 20px 10px 20px;
+  padding: 5px 20px;
+}
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 20px 80px;
+  }
 }
 .navbar-items-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .navbar {
-    height: 10vh;
-    padding: 20px 40px 20px 40px;
-  }
 }
 .book-hub-logo {
   height: 25px;
